@@ -17,17 +17,17 @@ class UsersRepository {
     }
 
     async getAll() {
-        // opens this.filename
         return JSON.parse(
             await fs.promises.readFile(this.filename, {
                 encoding: "UTF8"
             })
         );
     }
-    async create(attributes) {
-        attributes.id = this.randomId();
+
+    async create(attrs) {
+        attrs.id = this.randomId();
         const records = await this.getAll();
-        records.push(attributes);
+        records.push(attrs);
 
         await this.writeAll(records);
     }
@@ -42,14 +42,57 @@ class UsersRepository {
     randomId() {
         return crypto.randomBytes(4).toString("hex");
     }
+    // find specific users by id
+    async getOne(id) {
+        // opens this.filename
+        const records = await this.getAll();
+        return records.find(record => record.id === id);
+    }
+
+    async delete(id) {
+        // opens this.filename
+        const records = await this.getAll();
+        const filteredRecords = records.filter(record => record.id !== id);
+        await this.writeAll(filteredRecords);
+    }
+
+    async update(id, attrs) {
+        // opens this.filename
+        const records = await this.getAll();
+        const record = records.find(record => record.id === id);
+        if (!record) {
+            throw new Error(`Record with id ${id} cannot be found`);
+        }
+        Object.assign(record, attrs);
+        await this.writeAll(records);
+    }
+
+    async getOneBy(filters) {
+        // opens this.filename
+        const records = await this.getAll();
+        for (let record of records) {
+            let found = true;
+            for (let key in filters) {
+                if (record[key] !== filters[key]) {
+                    found = false;
+                }
+            }
+            if (found) {
+                return record;
+            }
+        }
+    }
 }
 
-const test = async () => {
-    const repo = new UsersRepository("users.json");
+// const test = async () => {
+//     const repo = new UsersRepository("users.json");
+//     // await repo.create({ email: "test@test.com" });
+//
+//     // await repo.update("2514e13a", { password: "newpassword" });
+//     const user = await repo.getOneBy({
+//         ergererg: "regerg"
+//     });
+//     console.log("user: ", user);
+// };
 
-    await repo.create({ email: "test@test.com", password: "password" });
-    const users = await repo.getAll();
-    console.log("users: ", users);
-};
-
-test();
+module.exports = new UsersRepository("users.json ");

@@ -1,37 +1,42 @@
 const express = require("express");
 
-// const bodyParser = require("bodyParser");
+const bodyParser = require("body-parser");
 
 const app = express();
 
-const bodyParser = (req, res, next) => {
-    if (req.method === "POST")
-        req.on("data", data => {
-            const parsed = data.toString("UTF8").split("&");
-            let formData = {};
-            for (let pair of parsed) {
-                const [key, value] = pair.split("=");
-                formData[key] = value;
-            }
-            console.log("data is: ", formData);
-        });
-};
+const usersRepo = require("./repositories/users");
+
+// parses all information from req.body on all post requests
+app.use(bodyParser.urlencoded({ extended: true }));
 
 app.get("/", (req, res) => {
-    res.send(`<div>
+    res.send(
+        `<div>
             <form method="POST">
                 <input placeholder="email" name="email" />
                 <input placeholder="password" name="password" />
                 <input placeholder="password confirmation" name="passwordConfirmation" />
                 <button >Submit </button>
             </form>
-
-        </div>`);
+        </div>`
+    );
 });
 
-app.post("/", (req, res) => {
-    console.log("request", req);
-    res.send("Account created");
+app.post("/", async (req, res) => {
+    const { email, password, passwordConfirmation } = req.body;
+    const existingUser = await usersRepo.getOneBy({ email });
+    if (existingUser) {
+        return res.send("Email in use  ");
+    }
+
+    if (password !== passwordConfirmation) {
+        return res.send("Passwords must match ");
+    }
+    // console.log("data is: ", data);
+    // console.log("email is: ", email);
+    // console.log("password is: ", password);
+    // console.log("passwordConfirmation is: ", passwordConfirmation);
+    res.send("Account created!!");
 });
 
 app.listen(3000, () => {
