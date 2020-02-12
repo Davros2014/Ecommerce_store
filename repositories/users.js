@@ -1,5 +1,4 @@
 const fs = require("fs");
-
 const crypto = require("crypto");
 
 class UsersRepository {
@@ -95,4 +94,4 @@ class UsersRepository {
 //     console.log("user: ", user);
 // };
 
-module.exports = new UsersRepository("users.json ");
+module.exports = new UsersRepository("users.json");

@@ -1,13 +1,16 @@
 const express = require("express");
-
-const bodyParser = require("body-parser");
-
 const app = express();
+// npm middelware packages
+const bodyParser = require("body-parser");
+// cookie seesion after body parser
+const cookieSession = require("cookie-session");
 
+// CRUD methods
 const usersRepo = require("./repositories/users");
 
 // parses all information from req.body on all post requests
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use(cookieSession({ keys: ["jhbds67suyb34rugwen"] }));
 
 app.get("/", (req, res) => {
     res.send(
@@ -28,14 +31,14 @@ app.post("/", async (req, res) => {
     if (existingUser) {
         return res.send("Email in use  ");
     }
-
     if (password !== passwordConfirmation) {
         return res.send("Passwords must match ");
     }
-    // console.log("data is: ", data);
-    // console.log("email is: ", email);
-    // console.log("password is: ", password);
-    // console.log("passwordConfirmation is: ", passwordConfirmation);
+    // create a user in our user repo tp represent this person
+    const user = await usersRepo.create({ email, password });
+    // Store the id of that inside the users cookie
+    console.log("req.session", req.session);
+    req.session.userId = user.id;
     res.send("Account created!!");
 });
 
