@@ -64,7 +64,7 @@ app.get("/signin", (req, res) => {
 app.post("/signin", async (req, res) => {
     const { email, password } = req.body;
     console.log("req.body", req.body);
-    const user = usersRepo.getOneBy({ email });
+    const user = await usersRepo.getOneBy({ email });
     if (!user) {
         return res.send("Email not found");
     }
