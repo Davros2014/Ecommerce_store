@@ -1,6 +1,6 @@
 const fs = require("fs");
 const crypto = require("crypto");
-const util = require("util ");
+const util = require("util");
 
 const scrypt = util.promisify(crypto.scrypt);
 
@@ -44,6 +44,17 @@ class UsersRepository {
         await this.writeAll(records);
 
         return record;
+    }
+
+    async comparePasswords(savedPW, suppliedPW) {
+        // saved = password saved in our database
+        // supplied = password supplied by the user
+
+        // destructures to get hased and salt values
+        const [hashed, salt] = savedPW.split(".");
+        const hashedSuppliedBuf = await scrypt(suppliedPW, salt, 64);
+
+        return hashed === hashedSuppliedBuf.toString("hex");
     }
 
     async writeAll(records) {
