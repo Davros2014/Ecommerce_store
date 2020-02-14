@@ -1,77 +1,77 @@
+const express = require("express");
+
+// imports check function from express-validator
+const { check, validationResult } = require("express-validator");
+
 // CRUD methods
 const usersRepo = require("../../repositories/users");
-const express = require("express");
+
+//add html
+const signupTemplate = require("../../views/admin/auth/signup");
+const signinTemplate = require("../../views/admin/auth/signin");
+
+const {
+    requireEmail,
+    requirePassword,
+    requirePasswordConfirmation,
+    requireEmailExists,
+    requireValidUserPassword
+} = require("./validators");
 
 const router = express.Router();
 
+// SIGNUP ////////////////////////////
 router.get("/signup", (req, res) => {
-    res.send(
-        `<div>
-            <h1> Your id is ${req.session.userId} </h1>
-            <form method="POST">
-                <input placeholder="email" name="email" />
-                <input placeholder="password" name="password" />
-                <input placeholder="password confirmation" name="passwordConfirmation" />
-                <button >Submit </button>
-            </form>
-        </div>`
-    );
+    res.send(signupTemplate({ req }));
 });
+router.post(
+    "/signup",
+    [requireEmail, requirePassword, requirePasswordConfirmation],
+    async (req, res) => {
+        const errors = validationResult(req);
 
-router.post("/signup", async (req, res) => {
-    const { email, password, passwordConfirmation } = req.body;
-    const existingUser = await usersRepo.getOneBy({ email });
-    if (existingUser) {
-        return res.send("Email in use  ");
+        if (!errors.isEmpty()) {
+            return res.send(signupTemplate({ req, errors }));
+        }
+        const { email, password, passwordConfirmation } = req.body;
+
+        // create a user in our user repo tp represent this person
+        const user = await usersRepo.create({ email, password });
+        // Store the id of that inside the users cookie
+
+        req.session.userId = user.id;
+        console.log("req.session.userId", req.session.userId);
+        res.send("Account created!!");
     }
-    if (password !== passwordConfirmation) {
-        return res.send("Passwords must match ");
-    }
-    // create a user in our user repo tp represent this person
-    const user = await usersRepo.create({ email, password });
-    // Store the id of that inside the users cookie
+);
 
-    req.session.userId = user.id;
-    console.log("req.session.userId", req.session.userId);
-    res.send("Account created!!");
-});
-
+// SIGNOUT ////////////////////////////
 router.get("/signout", (req, res) => {
     req.session = null;
     res.send("you are logged out");
 });
 
+// SIGNIN////////////////////////////
 router.get("/signin", (req, res) => {
-    res.send(
-        `<div>
-            <form method="POST">
-                <input placeholder="email" name="email" />
-                <input placeholder="password" name="password" />
-                <button >SIGN IN </button>
-            </form>
-        </div>`
-    );
+    res.send(signinTemplate({}));
 });
+router.post(
+    "/signin",
+    [requireEmailExists, requireValidUserPassword],
+    async (req, res) => {
+        const errors = validationResult(req);
 
-router.post("/signin", async (req, res) => {
-    const { email, password } = req.body;
-    console.log("req.body", req.body);
-    const user = await usersRepo.getOneBy({ email });
-    if (!user) {
-        return res.send("Email not found");
-    }
-    const vaildPassword = await usersRepo.comparePasswords(
-        user.password,
-        password
-    );
+        if (!errors.isEmpty()) {
+            return res.send(signinTemplate({ errors }));
+        }
 
-    if (!vaildPassword) {
-        console.log("user.password", user.password);
-        console.log("password", password);
-        return res.send("Invalid password");
+        console.log("Errors >>>", errors);
+        const { email, password } = req.body;
+        const user = await usersRepo.getOneBy({ email });
+        req.session.userId = user.id;
+        console.log("req.session.userId", req.session.userId);
+        res.send("You are signed in");
     }
-    req.session.userId = user.id;
-    res.send("You are signed in");
-});
+);
 
 module.exports = router;

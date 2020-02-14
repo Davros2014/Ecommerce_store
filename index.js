@@ -6,14 +6,27 @@ const cookieSession = require("cookie-session");
 // add express router
 const expressRouter = require("./routes/admin/auth");
 
+const signupTemplate = require("./views/admin/auth/signup");
+
 const app = express();
+
+// access public directory for static files > css, images etc
+app.use(express.static("./public"));
 
 // parses all information from req.body on all post requests
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(cookieSession({ keys: ["jhbds67suyb34rugwen"] }));
+app.use(
+    cookieSession({
+        keys: ["lkasld235j"]
+    })
+);
 
 // add routes
 app.use(expressRouter);
+
+app.get("*", function(req, res) {
+    res.send("the page you are looking for doesn't exist");
+});
 
 app.listen(3000, () => {
     console.log("I've been expecting you Mr. Bond....");
