@@ -27,8 +27,7 @@ body {
 html {
   box-sizing: border-box;
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  font-size: 62.5%; }
+  -moz-osx-font-smoothing: grayscale; }
 
 *,
 *:before,
@@ -46,30 +45,6 @@ p {
   height: auto;
   vertical-align: middle;
   display: block; }
-
-.loader {
-  position: fixed;
-  top: 0;
-  left: 0;
-  background: black;
-  width: 100vw;
-  height: 100vh;
-  animation-name: fadeIn;
-  animation-duration: 0.4s;
-  animation-fill-mode: forwards;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: auto;
-  z-index: 2000; }
-
-.loader_logo {
-  width: 10vw;
-  height: 10vw; }
-
-.error {
-  font-size: 1rem;
-  color: #f44a41; }
 
 @keyframes fadeIn {
   from {
@@ -92,7 +67,7 @@ body {
   width: 100%;
   margin: 0 auto; }
 
-.mainHtmlContainer {
+main container in index.html .mainHtmlContainer {
   width: 100vw;
   overflow: hidden; }
 
@@ -181,7 +156,8 @@ body {
   width: 100%; }
 
 .admin > div.container {
-  margin: 40px 10%; }
+  margin: 40px 10%;
+  background: red; }
 
 .admin .control {
   display: flex;

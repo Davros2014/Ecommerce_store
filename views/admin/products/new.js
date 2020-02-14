@@ -1,7 +1,7 @@
 const layout = require("../layout");
 const { getError } = require("../../helpers");
 
-module.export = ({ errors }) => {
+module.exports = ({ errors }) => {
     return layout({
         content: `
             <form method = "POST">
