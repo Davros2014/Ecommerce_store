@@ -1,0 +1,32 @@
+////////////////////////////////////////////////////
+// FIND PEOPLE /////////////////////////////////////
+////////////////////////////////////////////////////
+
+.subheader {
+    margin-top: 1rem;
+}
+.p_bodyTextMain span {
+    font-size: 1.6rem;
+    color: $primary-color;
+}
+.pageContainer .findPeople {
+    width: 30vw;
+}
+#findPeopleContainer {
+    margin-top: 2rem;
+    @include flexbox();
+    @include justify-content(center);
+    @include align-items(center);
+    @include flex-direction(column);
+    width: 80vw;
+}
+.findPeople {
+    background: $light-accent-color;
+    color: rgba($complimentary-color, 0.25);
+}
+
+@media all and (max-width: 768px) {
+    .pageContainer .findPeople {
+        width: 90vw;
+    }
+}

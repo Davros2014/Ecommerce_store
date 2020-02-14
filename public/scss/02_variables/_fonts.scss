@@ -1,0 +1,292 @@
+////////////////////////////////////////////////////////////
+// FONTS IMPORTS ///////////////////////////////////////////
+////////////////////////////////////////////////////////////
+
+@import url("/fonts/montserrat/montserrat_stylesheet.css");
+@import url("/fonts/montserrat/montserrat_stylesheet.css");
+@import url("/fonts/playfair_display/playfair_stylesheet.css");
+
+// MAIN FONTS ////////////////////////////////////////////
+$bodytext: "montserratlight";
+$serifHeader: "playfair_displaybold";
+$serifBody: "playfair_displayregular";
+$overlayText: "montserratsemi_bold";
+$spanText: "playfair_displayitalic";
+$mainheaderfont: "montserratregular";
+
+////////////////////////////////////////////////////////////
+// FONTS MIXINS ////////////////////////////////////////////
+////////////////////////////////////////////////////////////
+
+// MAIN HEADERS ////////////////////////////////////////////
+@mixin H1-Headers(
+    $size: 3.6rem,
+    $colour: $primary-color,
+    $weight: 700,
+    $lh: 0.95,
+    $ls: 0.05rem
+) {
+    font-family: "montserratregular", Helvetica, sans-serif;
+    @if $size {
+        font-size: $size;
+    }
+    @if $colour {
+        color: $colour;
+    }
+    @if $weight {
+        font-weight: $weight;
+    }
+    @if $lh {
+        line-height: $lh;
+    }
+    @if $ls {
+        letter-spacing: $ls;
+    }
+}
+@mixin H2-Headers(
+    $size: 2.8rem,
+    $colour: $complimentary-color,
+    $weight: 700,
+    $lh: 0.95,
+    $ls: 0.05rem
+) {
+    font-family: "montserratregular", Helvetica, sans-serif;
+    @if $size {
+        font-size: $size;
+    }
+    @if $colour {
+        color: $colour;
+    }
+    @if $weight {
+        font-weight: $weight;
+    }
+    @if $lh {
+        line-height: $lh;
+    }
+    @if $ls {
+        letter-spacing: $ls;
+    }
+}
+@mixin H3-Headers(
+    $size: 2.4rem,
+    $colour: $complimentary-color,
+    $weight: 300,
+    $lh: 0.7,
+    $ls: 0.05rem
+) {
+    font-family: "montserratregular", Helvetica, sans-serif;
+    @if $size {
+        font-size: $size;
+    }
+    @if $colour {
+        color: $colour;
+    }
+    @if $weight {
+        font-weight: $weight;
+    }
+    @if $lh {
+        line-height: $lh;
+    }
+    @if $ls {
+        letter-spacing: $ls;
+    }
+}
+@mixin H4-Headers(
+    $size: 2.2rem,
+    $colour: $off-white,
+    $weight: 300,
+    $lh: 1.2,
+    $ls: 0.05rem
+) {
+    font-family: "montserratregular", Helvetica, sans-serif;
+    @if $size {
+        font-size: $size;
+    }
+    @if $colour {
+        color: $colour;
+    }
+    @if $weight {
+        font-weight: $weight;
+    }
+    @if $lh {
+        line-height: $lh;
+    }
+    @if $ls {
+        letter-spacing: $ls;
+    }
+}
+@mixin H5-Headers(
+    $size: 2rem,
+    $colour: $complimentary-color,
+    $weight: 500,
+    $lh: 1.2,
+    $ls: 0.05rem
+) {
+    font-family: "montserratregular", Helvetica, sans-serif;
+    @if $size {
+        font-size: $size;
+    }
+    @if $colour {
+        color: $colour;
+    }
+    @if $weight {
+        font-weight: $weight;
+    }
+    @if $lh {
+        line-height: $lh;
+    }
+    @if $ls {
+        letter-spacing: $ls;
+    }
+}
+@mixin H6-Headers(
+    $size: 1.6rem,
+    $colour: $complimentary-color,
+    $weight: 300,
+    $lh: 0.7,
+    $ls: 0.05rem,
+    $tt: uppercase
+) {
+    font-family: "montserratregular", Helvetica, sans-serif;
+    @if $size {
+        font-size: $size;
+    }
+    @if $colour {
+        color: $colour;
+    }
+    @if $weight {
+        font-weight: $weight;
+    }
+    @if $lh {
+        line-height: $lh;
+    }
+    @if $ls {
+        letter-spacing: $ls;
+    }
+    @if $tt {
+        text-transform: $tt;
+    }
+}
+// Main Body Text
+
+@mixin BodyText-montserrat(
+    $size: 1.6rem,
+    $colour: $complimentary-color,
+    $weight: 100,
+    $lh: 1.5,
+    $ls: 0.05rem
+) {
+    font-family: "montserratregular", Helvetica, sans-serif;
+    @if $size {
+        font-size: $size;
+    }
+    @if $colour {
+        color: $colour;
+    }
+    @if $weight {
+        font-weight: $weight;
+    }
+    @if $lh {
+        line-height: $lh;
+    }
+    @if $ls {
+        letter-spacing: $ls;
+    }
+}
+@mixin BodyTextMain(
+    $size: 1.6rem,
+    $colour: $complimentary-color,
+    $weight: 100,
+    $lh: 1.15,
+    $ls: 0.05rem
+) {
+    font-family: "montserratregular", Helvetica, sans-serif;
+    @if $size {
+        font-size: $size;
+    }
+    @if $colour {
+        color: $colour;
+    }
+    @if $weight {
+        font-weight: $weight;
+    }
+    @if $lh {
+        line-height: $lh;
+    }
+    @if $ls {
+        letter-spacing: $ls;
+    }
+}
+@mixin bodysmall(
+    $size: calc(0.75rem + 0.25vw),
+    $colour: $light-accent-color,
+    $weight: 100,
+    $lh: 1.15,
+    $ls: 0.05rem
+) {
+    font-family: "montserratregular", Helvetica, sans-serif;
+    @if $size {
+        font-size: $size;
+    }
+    @if $colour {
+        color: $colour;
+    }
+    @if $weight {
+        font-weight: $weight;
+    }
+    @if $lh {
+        line-height: $lh;
+    }
+    @if $ls {
+        letter-spacing: $ls;
+    }
+}
+@mixin H1-Headers(
+    $size: 2.8rem,
+    $colour: $primary-color,
+    $weight: 100,
+    $lh: 1.07,
+    $ls: 0.001rem
+) {
+    font-family: "montserratregular", Helvetica, sans-serif;
+    @if $size {
+        font-size: $size;
+    }
+    @if $colour {
+        color: $colour;
+    }
+    @if $weight {
+        font-weight: $weight;
+    }
+    @if $lh {
+        line-height: $lh;
+    }
+    @if $ls {
+        letter-spacing: $ls;
+    }
+}
+
+@mixin LightText(
+    $size: 1.4rem,
+    $colour: $complimentary-color,
+    $weight: 100,
+    $lh: 1.35,
+    $ls: 0.0025rem
+) {
+    font-family: "montserratlight", Helvetica, sans-serif;
+    @if $size {
+        font-size: $size;
+    }
+    @if $colour {
+        color: $colour;
+    }
+    @if $weight {
+        font-weight: $weight;
+    }
+    @if $lh {
+        line-height: $lh;
+    }
+    @if $ls {
+        letter-spacing: $ls;
+    }
+}

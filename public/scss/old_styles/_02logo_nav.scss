@@ -1,0 +1,184 @@
+////////////////////////////////////////////////////
+// LOGO PAGE //////////////////////////////////////
+////////////////////////////////////////////////////
+
+.logoContainer {
+    // background: $test-color;
+    width: $width100;
+    height: $height90;
+    @include flexbox();
+    @include justify-content(center);
+    @include align-items(center);
+    @include push--auto;
+    @media (max-width: 768px) {
+        width: $width90;
+    }
+}
+// LOGO HOLDER
+.logoContainer {
+    position: relative;
+    height: 100%;
+    width: auto;
+}
+.logoMain {
+    width: 4rem;
+    height: 4rem;
+    text-align: center;
+    object-fit: contain;
+}
+.littleCircle {
+    border-radius: 100%;
+    border: 5px solid $primary-color;
+    width: 1.25rem;
+    height: 1.25rem;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transform: rotateY(45deg, 45deg);
+}
+// .littleCircle::after {
+//     content: "";
+//     border-radius: 100%;
+//     position: absolute;
+//     top: 0;
+//     left: 0;
+//     right: 0;
+//     bottom: 0;
+//     background: $complimentary-color;
+//     border: 7px solid $complimentary-color;
+// }
+
+.userProfilePic {
+    border: 3px solid $primary-color;
+    width: 4rem;
+    height: 4rem;
+    text-align: center;
+    border-radius: 100%;
+    object-fit: cover;
+}
+.userProfilePic:hover {
+    cursor: pointer;
+}
+
+////////////////////////////////////////////
+// NAVBAR //////////////////////////////////
+////////////////////////////////////////////
+.topNav {
+    background: $complimentary-color;
+    height: 8rem;
+    position: fixed;
+    width: 100vw;
+    margin: 0 auto;
+    @include flexbox();
+    @include justify-content(center);
+    @include align-items(center);
+    overflow: hidden;
+    z-index: 1000;
+}
+.navWrapper {
+    width: 80vw;
+    text-align: center;
+    @include flexbox();
+    @include align-items(center);
+    @include justify-content(space-between);
+}
+.navDetails {
+    // background: rgba(0, 0, 0, 0.25);
+    @include flexbox();
+    @include flex-direction(row);
+    @include justify-content(center);
+}
+.navLinkbar {
+    @include flexbox();
+    @include flex-direction(row);
+    @include align-content(flex-end);
+}
+.navLink {
+    position: relative;
+    @include bodysmall;
+    // background: rgba(270, 270, 270, 0.25);
+    @include flexbox();
+    @include align-items(flex-end);
+    margin-right: 3rem;
+    @include transition(all, 0.2s, ease-out);
+}
+.navLink:hover {
+    color: $primary-color;
+    @include transition(all, 0.2s, ease-out);
+}
+.navLink::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 16px;
+    bottom: -4rem;
+    opacity: 1;
+    left: 0;
+    background-color: $primary-color;
+    visibility: hidden;
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+    @include transition(all, 0.2s, ease-in-out);
+    z-index: 500;
+}
+.navLink::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 5rem;
+    top: -7rem;
+    opacity: 0.25;
+    left: 0;
+    background-color: $primary-color;
+    visibility: hidden;
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+    @include transition(all, 0.2s, ease-in-out);
+    z-index: 500;
+}
+.navLink:hover::before {
+    visibility: visible;
+    -webkit-transform: translateY(-100%);
+    transform: translateY(-100%);
+}
+.navLink:hover::after {
+    visibility: visible;
+    -webkit-transform: translateY(100%);
+    transform: translateY(100%);
+}
+.navPicContainer {
+    height: 100%;
+    border-left: 1px solid $line-color;
+    border-right: 1px solid $line-color;
+    text-align: center;
+    margin: 0 auto;
+    padding-left: 3rem;
+    padding-right: 3rem;
+    @include flexbox();
+    @include flex-direction(column);
+    @include justify-content(center);
+    @include align-items(center);
+}
+.navPicContainer .userProfilePic::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background: rgba($complimentary-color, 1);
+    width: 100%;
+    height: 100%;
+    z-index: 20;
+    cursor: pointer;
+}
+.welcome {
+    margin-top: 0.5rem;
+    @include bodysmall;
+    color: $light-accent-color;
+}
+.welcome span {
+    @include bodysmall;
+    color: $primary-color;
+}

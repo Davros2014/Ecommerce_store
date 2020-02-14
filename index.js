@@ -4,7 +4,8 @@ const bodyParser = require("body-parser");
 // cookie session after body parser
 const cookieSession = require("cookie-session");
 // add express router
-const expressRouter = require("./routes/admin/auth");
+const authRouter = require("./routes/admin/auth");
+const productsRouter = require("./routes/admin/productsMain");
 
 const signupTemplate = require("./views/admin/auth/signup");
 
@@ -22,7 +23,8 @@ app.use(
 );
 
 // add routes
-app.use(expressRouter);
+app.use(authRouter);
+app.use(productsRouter);
 
 app.get("*", function(req, res) {
     res.send("the page you are looking for doesn't exist");

@@ -1,0 +1,205 @@
+////////////////////////////////////////////////////
+// UPLOADER ////////////////////////////////////////
+////////////////////////////////////////////////////
+.uploadOpacity {
+    background: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+}
+// wraps all content
+.uploadWrapper {
+    @include flexbox();
+    @include flex-direction(column);
+    @include justify-content(center);
+    @include align-items(center);
+    animation-name: fadeInbounceIn;
+    animation-duration: 0.35s;
+    animation-fill-mode: forwards;
+}
+@keyframes fadeInbounceIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+.uploadWrapper h4 {
+    @include H4-Headers;
+}
+// wraps upload button and submit
+.uploadContainer {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: $width50;
+    height: $height50;
+    background: rgba(0, 0, 0, 0.85);
+    @include flexbox();
+    @include align-items(center);
+    @include justify-content(center);
+    opacity: 1;
+    border-radius: 1rem;
+    z-index: 200;
+    padding: 3rem 5rem 3rem 5rem;
+}
+//
+.upload-btn-wrapper {
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+    @include flexbox();
+    @include flex-direction(column);
+}
+.inputField {
+    position: relative;
+    width: 100%;
+    height: 6rem;
+    cursor: pointer;
+}
+// input field
+.uploadButton {
+    background: blue;
+    height: 2rem;
+}
+// .inputField input[type="file"] {
+//     font-size: 100px;
+//     position: absolute;
+//     left: 0;
+//     top: 0;
+//     opacity: 0;
+//     background: blue;
+// }
+
+// LABEL > INPUT BUTTON ////
+.inputButton {
+    position: absolute;
+    left: 50%;
+    right: 50%;
+    width: 100%;
+    height: 100%;
+    transform: translate(-50%, -50%);
+    color: gray;
+    background-color: red;
+    padding: 0.25rem 1rem;
+    border-radius: 8px;
+    font-size: 20px;
+    font-weight: bold;
+    transition: 0.25s all ease-in-out;
+    cursor: pointer;
+    border: none;
+    width: 20rem;
+    height: 2rem;
+    line-height: 10rem;
+}
+
+// SUBMIT BUTTON ////
+.uploadProfileButton {
+    background: red;
+    background: $complimentary-color;
+    color: $light-accent-color;
+    outline: 0;
+    border: 0;
+    @include transition(all, 0.2s, ease-out);
+    font-size: 1rem;
+    padding: 0.5rem;
+    width: 8rem;
+    margin: 0 auto;
+    margin-top: 3rem;
+}
+.uploadProfileButton:hover {
+    cursor: pointer;
+    background: $primary-color;
+    color: white;
+    width: 10rem;
+}
+
+.closeUploader {
+    position: absolute;
+    top: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: calc(0.5rem + 0.5vw);
+    height: calc(0.5rem + 0.5vw);
+    border-radius: 100%;
+}
+
+// /* style 5 */
+.inputfile {
+    opacity: 0;
+}
+// .inputfile-5 + label {
+//     color: #d3394c;
+// }
+//
+// .inputfile-5:focus + label,
+// .inputfile-5.has-focus + label,
+// .inputfile-5 + label:hover {
+//     color: #722040;
+// }
+//
+// .inputfile-5 + label figure {
+//     width: 100px;
+//     height: 135px;
+//     background-color: #d3394c;
+//     display: block;
+//     position: relative;
+//     padding: 30px;
+//     margin: 0 auto 10px;
+// }
+//
+// .inputfile-5:focus + label figure,
+// .inputfile-5.has-focus + label figure,
+// .inputfile-5 + label:hover figure {
+//     background-color: #722040;
+// }
+//
+// .inputfile-5 + label figure::before,
+// .inputfile-5 + label figure::after {
+//     width: 0;
+//     height: 0;
+//     content: "";
+//     position: absolute;
+//     top: 0;
+//     right: 0;
+// }
+//
+// .inputfile-5 + label figure::before {
+//     border-top: 20px solid #dfc8ca;
+//     border-left: 20px solid transparent;
+// }
+//
+// .inputfile-5 + label figure::after {
+//     border-bottom: 20px solid #722040;
+//     border-right: 20px solid transparent;
+// }
+//
+// .inputfile-5:focus + label figure::after,
+// .inputfile-5.has-focus + label figure::after,
+// .inputfile-5 + label:hover figure::after {
+//     border-bottom-color: #d3394c;
+// }
+.file-5 {
+    opacity: 0;
+}
+.uploadFile {
+    width: 15%;
+    height: auto;
+    vertical-align: middle;
+    display: block;
+    margin: 0 auto;
+    cursor: pointer;
+    opacity: 0.5;
+    @include transition(all, 0.2s, ease-out);
+    margin-bottom: 1rem;
+}
+.uploadFile:hover {
+    opacity: 1;
+}

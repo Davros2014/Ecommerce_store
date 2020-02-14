@@ -1,0 +1,42 @@
+.buttonBasic {
+    @include LightText;
+    color: $complimentary-color;
+
+    // background: $complimentary-color;
+    // background: rgba(0, 0, 0, 0.15);
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    border: 0;
+    outline: 0;
+    padding: 0.35rem 0.65rem;
+    @include transition(all, 0.2s, ease-out);
+    color: $primary-color;
+    // color: white;
+    background: rgba($complimentary-color, 0.2);
+    font-size: 0.8rem;
+}
+.buttonBasic:hover {
+    color: $primary-color;
+    color: white;
+
+    background: rgba(0, 0, 0, 0.7);
+    cursor: pointer;
+}
+.bioinfoAdd,
+.bioinfoSave {
+    margin: 2rem 0 1rem 0;
+}
+.submitButton {
+    @include LightText;
+    padding: 0.5rem 1rem;
+    background: $complimentary-color;
+    color: $light-grey-color;
+    border: 0;
+    outline: 0;
+    margin-top: 2rem;
+    @include transition(all, 0.2s, ease-out);
+    text-transform: uppercase;
+    font-size: calc(1rem + 0.25vw);
+}
+.submitButton:hover {
+    color: $primary-color;
+}

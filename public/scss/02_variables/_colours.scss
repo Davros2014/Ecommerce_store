@@ -1,0 +1,61 @@
+////////////////////////////////////////////////////////////
+// COLOURS ///////////////////////////////////////////
+////////////////////////////////////////////////////////////
+
+// PRIMARY COLOURS ////////////////////////////////////////////
+// $primary-color: rgba(236, 0, 140, 1);
+// $primary-color: rgba(255, 165, 0, 1);
+// $primary-color: rgba(244, 203, 66, 1);
+// $primary-color: rgba(244, 74, 65, 1);
+// $primary-color: rgba(244, 74, 65, 1);
+// $primary-color: #db24b6;
+// $primary-color: #59dd22;
+// $primary-color: #bd42b5;
+// $primary-color: rgba(236, 0, 140, 1);
+$primary-color: rgba(244, 74, 65, 1);
+
+// SECONDARY COLOURS ////////////////////////////////////////////
+$secondary-color: rgba(12, 8, 76, 1);
+$secondary-color-75: rgba(12, 8, 76, 0.75);
+
+// ACCENT COLOURS ////////////////////////////////////////////
+$accent-color: rgba(51, 51, 51, 1);
+$complimentary-color: rgba(76, 76, 76, 1);
+$light-accent-color: rgba(230, 228, 223, 0.75);
+
+// THE GREYS ////////////////////////////////////////////
+$light-grey-color: rgba(230, 228, 223, 0.5);
+$overlayColor: rgba(270, 270, 270, 0.05);
+
+$backgroundColour: #f9f9f9;
+$line-color: rgba(270, 270, 270, 0.1);
+$off-white: rgba(270, 280, 270, 0.5);
+
+// FONT COLOURS ////////////////////////////////////////////
+$primary-font-color: #969595; // main header grey
+$bodyTextColor: rgba(51, 51, 51, 0.7);
+
+// Controlling color with Sass color functions
+
+// Darken & Lighten
+// darken( $base-color, 10% )
+// lighten( $base-color, 10% )
+
+// Saturate, & Desaturate
+// saturate( $base-color, 20% )
+// desaturate( $base-color, 20% )
+
+// Adjust-hue
+// adjust-hue( $base-color, 20% )
+
+// Adding Alpha Transparency
+// rgba( $base-color, .7 )
+
+// Tint & Shade
+// tint( $base-color, 10% )
+// shade( $base-color, 10% )
+
+// Getting more advanced
+// border: 1px solid darken($base-color, 20%);
+// text-shadow: 0 -1px 0 darken($base-color, 10%);
+// @include box-shadow(inset 0 1px 0 lighten($base-color, 20%));

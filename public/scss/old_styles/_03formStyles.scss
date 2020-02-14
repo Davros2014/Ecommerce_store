@@ -1,0 +1,227 @@
+/* ====================================
+               FORMS
+==================================== */
+
+*:focus {
+    outline: none;
+}
+button:focus {
+    outline: 0;
+}
+/* colors */
+:root {
+    --main-bg-color: coral;
+    --secondary-color: rgba(234, 225, 208, 1);
+    --accent-color: rgba(88, 24, 69, 1);
+}
+.canvasField {
+    display: flex;
+    flex-direction: column;
+}
+.names {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#signatureCanvas {
+    border: 1px solid $primary-color;
+    opacity: 0.5;
+}
+#signatureField {
+    opacity: 0.5;
+    z-index: 5;
+}
+#petitionFormField {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    justify-content: center;
+    align-items: center;
+}
+#signatureCanvas {
+    // border: 1px solid --accent-color;
+    background: $light-accent-color;
+}
+
+.submit-button,
+input[type="button"] {
+    // color: $accent-color;
+    padding: 0.25rem 0.5rem;
+    border-radius: 2px;
+    border: none;
+    transition: 0.25s all ease-in-out;
+    cursor: pointer;
+    width: 10rem;
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 2rem;
+    background: $complimentary-color;
+}
+.submit-button:hover,
+input[type="button"]:hover {
+    background: $primary-color;
+    color: white;
+}
+.selectContainer {
+    text-align: center;
+    margin-top: 1rem;
+}
+
+/*=================================
+INPUT STYLES
+=================================*/
+
+fieldset {
+    font-family: "montserratlight", Helvetica, sans-serif;
+    border: none;
+    box-shadow: none;
+    @include flexbox();
+    @include justify-content(center);
+    @include align-items(center);
+    margin: 0 auto;
+    padding: 0;
+    width: 400px;
+    color: $complimentary-color;
+}
+input {
+    /* ---------- email/name boxes ---------- */
+    border: none;
+    padding: 0 0 0 20px;
+    background: $accent-color;
+    font-size: 1.2rem;
+    border-radius: 3px;
+    margin-top: 0.75rem;
+    color: $complimentary-color;
+    @include transition(all, 0.2s, ease-out);
+    padding: 2rem;
+    // width: 1px;
+    // height: 1px;
+    // opacity: 1;
+    // animation-name: reveal;
+    animation-duration: 0.75s;
+    animation-delay: 1s;
+    animation-fill-mode: forwards;
+    top: 0;
+    overflow: hidden;
+    width: 90%;
+    height: 4vh;
+}
+
+@keyframes reveal {
+    0% {
+        opacity: 0;
+    }
+    20% {
+        opacity: 1;
+        width: 1px;
+    }
+    60% {
+        width: 380px;
+        height: 1px;
+        opacity: 1;
+    }
+    100% {
+        width: 380px;
+        height: 4vh;
+        opacity: 1;
+    }
+}
+input:last-child {
+    margin-bottom: 1rem;
+    animation-delay: 2s;
+}
+
+input:focus,
+textarea:focus {
+    /* ---------- input text colour ---------- */
+    background: $complimentary-color;
+    border: none;
+    color: $primary-color;
+    outline: none;
+}
+input[type="submit"] {
+    /* ---------- send message box ---------- */
+    background: $complimentary-color;
+    border-radius: 2px;
+    border-style: none;
+    color: $accent-color;
+    cursor: pointer;
+    float: right;
+    height: 30px;
+    line-height: 20px;
+    text-align: center;
+    margin: 2rem auto;
+    padding: calc(0.5rem + 1rem);
+    font-size: calc(0.5rem + 0.5vw);
+    text-transform: uppercase;
+    -webkit-transition: all 0.2s ease-in-out 0s;
+    transition: all 0.2s ease-in-out 0s;
+}
+input[type="submit"]:hover {
+    /*-- send message button --*/
+    background: $primary-color;
+    color: #fff;
+}
+
+////////////////// LOGIN PAGE /////////////////////
+
+.logInContainer {
+    @include flexbox();
+    @include flex-direction(column);
+    @include justify-content(center);
+    @include align-items(center);
+    background: rgba(0, 0, 0, 0.75);
+    margin: auto;
+    text-align: center;
+    // position: absolute;
+    // top: 5rem;
+    // left: 5rem;
+    padding: calc(1rem + 1vw);
+}
+
+.mainH1 h3 {
+    @include H3-Headers;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+/////////////////////////////////////////////////////////////////////
+// REGISTRATION FIELD ///////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////
+
+.regContainer {
+    @include flexbox();
+    @include flex-direction(column);
+    @include justify-content(center);
+    @include align-items(center);
+    background: rgba(0, 0, 0, 0.8);
+    margin: auto;
+    text-align: center;
+    // position: absolute;
+    // top: 5rem;
+    // left: 5rem;
+    width: 40vw;
+    height: auto;
+    border-radius: 5px;
+    padding: calc(1rem + 1vw);
+}
+.regContainer h3 {
+    @include H3-Headers;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+.regContainer p {
+    margin-top: 1rem;
+}
+.regContainer a {
+    margin-top: 1rem;
+    color: $primary-color;
+}
+
+.loginPage {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    width: 30vw;
+    text-align: center;
+}

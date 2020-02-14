@@ -1,0 +1,30 @@
+/* =================================
+IMPORTED STYLES
+================================= */
+
+// 01_PLUGINS ////////////////////////////////////////////
+@import "01_plugins/flexbox";
+@import "01_plugins/cssGrid";
+
+// 02_VARIABLES ////////////////////////////////////////////
+@import "02_variables/colours";
+@import "02_variables/fonts";
+@import "02_variables/measurements";
+
+// 03_VARIABLES ////////////////////////////////////////////
+@import "03_mixins/transitions";
+
+// 04_GENERAL_STYLING ////////////////////////////////////////////
+// @import "04_general_styling/01A_loader";
+@import "04_general_styling/01generalStyles";
+// @import "04_general_styling/02logo_nav";
+// @import "04_general_styling/03formStyles";
+// @import "04_general_styling/04registrationPage";
+// @import "04_general_styling/05app";
+// @import "04_general_styling/06uploader";
+// @import "04_general_styling/07profile";
+// @import "04_general_styling/08findPeople";
+// @import "04_general_styling/09friends";
+// @import "04_general_styling/10Bio";
+// @import "04_general_styling/11Buttons";
+// @import "04_general_styling/12chatroom";

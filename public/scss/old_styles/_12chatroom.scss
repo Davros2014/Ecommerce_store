@@ -1,0 +1,140 @@
+.chatInputField {
+    @include flexbox();
+    @include justify-content(center);
+    @include align-items(center);
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    margin-top: 3rem;
+    width: 100vw;
+    height: 20vh;
+    background: $light-grey-color;
+    border-top: 1px solid rgba($complimentary-color, 0.2);
+}
+.chatEditor {
+    width: 50vw;
+    min-height: 8vh;
+    padding: 2rem;
+    color: $complimentary-color;
+    font-size: 1rem;
+    border: 0;
+    outline: 0;
+}
+.chatEditor:focus {
+    background: rgba($complimentary-color, 0.35);
+}
+.messaging_container {
+    @include flexbox();
+
+    @include flex-direction(column);
+}
+.messages {
+    overflow: scroll;
+    max-height: 50vh;
+    min-height: 20vh;
+    margin: 1rem 0;
+}
+// field holding the message and date stamp
+.chatContainer {
+    @include flexbox();
+    @include justify-content(center);
+    @include align-items(center);
+
+    // flex-wrap: wrap;
+    text-align: center;
+    width: 80vw;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    height: 50vh;
+    overflow: scroll;
+    margin-top: 1rem;
+    margin-bottom: 3rem;
+}
+
+.chatItem {
+    position: relative;
+    width: 80%;
+    margin: 0 auto;
+    padding: 3rem;
+    margin-top: 2rem;
+    border-radius: 3px;
+    background: $light-grey-color;
+    margin-right: calc(3rem + 2vw);
+}
+.chatItem:nth-child(odd) {
+    background: rgba($primary-color, 0.06);
+    margin-left: calc(3rem + 2vw);
+}
+.chatItem .userProfilePic {
+    width: 5rem;
+    height: 5rem;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+.chatItem:nth-child(odd) .userProfilePic {
+    position: absolute;
+    left: 100%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+.chatItem:nth-child(odd) .chatDetails {
+    text-align: right;
+    margin-right: 1.5rem;
+}
+
+.chatDetails {
+    text-align: left;
+    line-height: 0.8rem;
+    margin-left: 1.5rem;
+}
+.chatInfo {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    line-height: 1.25;
+}
+.chatItem:nth-child(odd) .chatInfo {
+    color: $primary-color;
+}
+.chatinfoSave {
+    width: 30%;
+    margin: 0 auto;
+    margin-top: 2rem;
+    padding: 0.5rem;
+}
+.chatMessage {
+    font-size: 1.5rem;
+    padding: 1.5rem;
+    color: $complimentary-color;
+    background: $light-grey-color;
+    background: rgba($complimentary-color, 0.4);
+    background: rgba(270, 270, 270, 0.85);
+    overflow: hidden;
+}
+.h4_header.chatMessage::before {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    left: 3rem;
+    right: auto;
+    top: 50%;
+    bottom: auto;
+    border: 8px solid;
+    border-color: rgba(270, 270, 270, 0.85) rgba(270, 270, 270, 0.85)
+        transparent transparent;
+}
+.chatItem:nth-child(odd) .h4_header.chatMessage::before {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    left: auto;
+    right: 3rem;
+    top: 50%;
+    bottom: auto;
+    border: 8px solid;
+    border-color: rgba(270, 270, 270, 0.85) transparent transparent
+        rgba(270, 270, 270, 0.85);
+}

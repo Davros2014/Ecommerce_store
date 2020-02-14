@@ -1,0 +1,31 @@
+//////////////////////////////////////
+// MEASUREMENTS ETC //////////////////
+//////////////////////////////////////
+
+//WIDTHS
+$width100: 100vw;
+$width90: 90vw;
+$width80: 80vw;
+$width75: 75vw;
+$width60: 60vw;
+$width50: 50vw;
+$width30: 30vw;
+$width25: 25vw;
+
+//HEIGHTS
+$height100: 100vh;
+$height90: 90vh;
+$height50: 50vh;
+
+//BY-CONTAINER-NAME
+
+$outerContainer: 80vw;
+$background: blue;
+
+// CENTERS IN DIV CONTAINER ///
+@mixin push--auto {
+    margin: {
+        left: auto;
+        right: auto;
+    }
+}

@@ -1,0 +1,110 @@
+////////////////////////////////////////////////////
+// PROFILE ////////////////////////////////////////
+////////////////////////////////////////////////////
+
+.profileContainer {
+    @include flexbox();
+    @include align-items(center);
+    @include justify-content(center);
+    @include flex-direction(column);
+    padding: 3rem 3rem 2rem 3rem;
+    width: $width50;
+    background: $light-accent-color;
+    margin: 0 auto;
+    position: relative;
+    border-radius: 10px;
+    margin-top: 12rem;
+}
+.profileWrapper {
+    @include flexbox();
+    @include align-items(center);
+    @include justify-content(center);
+    flex-direction: row;
+    width: 100%;
+    margin-top: 4rem;
+}
+.mainImageProfile {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    transform: translate(-50%, -50%);
+}
+.profileInfo {
+    @include flexbox();
+    @include flex-direction(column);
+}
+
+.userName {
+    margin-bottom: 1rem;
+}
+.userName span {
+    color: $primary-color;
+}
+.userName bold {
+    font-size: 2rem;
+    color: $complimentary-color;
+}
+.profileContainer .userProfilePic {
+    width: calc(11rem + 4vw);
+    height: calc(11rem + 4vw);
+    border-width: 6px;
+    animation-name: fadeDown;
+    animation-duration: 0.25s;
+    opacity: 1;
+    animation-fill-mode: forwards;
+}
+// .mainImageProfile:hover::after {
+//     background: red;
+//     border-radius: 100%;c
+// }
+
+// .mainImageProfile::before {
+//     content: "theres a better way";
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+//     position: absolute;
+//     left: 50%;
+//     top: 50%;
+//     transform: translate(-50%, -50%);
+//     text-align: center;
+//     background: #000;
+//     opacity: 1;
+//     font-size: 12px;
+//     z-index: 20;
+//     cursor pointer
+// }
+
+@keyframes fadeDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-10%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+///// OTHER Profiles
+
+.otherprofileContainer {
+    @include flexbox();
+    @include align-items(center);
+    @include justify-content(center);
+    @include flex-direction(column);
+    padding: 3rem 3rem 2rem 3rem;
+    width: $width60;
+    background: $light-accent-color;
+    margin: 0 auto;
+    position: relative;
+    border-radius: 10px;
+    margin-top: 8rem;
+}
+.otherprofileHeader {
+    margin-top: 8rem;
+}
+.otherprofileContainer .userProfilePic {
+    width: calc(11rem + 4vw);
+    height: calc(11rem + 4vw);
+}
