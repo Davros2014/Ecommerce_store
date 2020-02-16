@@ -5,11 +5,13 @@ module.exports = {
     // FOR ADMIN/PRODUCTS/NEW
     requireTitle: check("title")
         .trim()
-        .isLength({ min: 1, max: 40 }),
+        .isLength({ min: 2, max: 40 })
+        .withMessage("Title must be between 2 and 40 characters"),
     requirePrice: check("price")
         .trim()
         .toFloat()
-        .isFloat({ min: 1 }),
+        .isFloat({ min: 1 })
+        .withMessage("Price must be a number greater than 1 "),
     requireEmail: check("email")
         .trim()
         .normalizeEmail()

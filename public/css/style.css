@@ -156,8 +156,7 @@ body {
   width: 100%; }
 
 .admin > div.container {
-  margin: 40px 10%;
-  background: red; }
+  margin: 40px 10%; }
 
 .admin .control {
   display: flex;
