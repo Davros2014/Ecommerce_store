@@ -199,7 +199,7 @@ body {
   position: absolute;
   z-index: 10;
   top: 0;
-  right: 5px;
+  right: 6px;
   bottom: 0;
   display: flex;
   align-items: center;
@@ -214,7 +214,3 @@ body {
 .cart-right {
   display: flex;
   align-items: center; }
-
-@media all and (max-width: 768px) {
-  .pageContainer {
-    width: 90vw; } }

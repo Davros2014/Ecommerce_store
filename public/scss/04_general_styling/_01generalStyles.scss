@@ -229,7 +229,7 @@ body {
     position: absolute;
     z-index: 10;
     top: 0;
-    right: 5px;
+    right: 6px;
     bottom: 0;
     display: flex;
     align-items: center;
@@ -249,9 +249,9 @@ body {
     align-items: center;
 }
 
-// mobile first > from here for screen sizes 768px and above
-@media all and (max-width: 768px) {
-    .pageContainer {
-        width: $width90;
-    }
-}
+// // mobile first > from here for screen sizes 768px and above
+// @media all and (max-width: 768px) {
+//     .pageContainer {
+//         width: $width90;
+//     }
+// }

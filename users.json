@@ -48,5 +48,25 @@
     "email": "john@sullivan.com",
     "password": "0bc9cc9d74898f0a60dc29e3360a789784b61748414391ca49ad084bbebadac97471cb2b96549efb14400875fe967ec9aa8ee54912175977e7dccc532f5d8f2f.3aabcb8e98921fd5",
     "id": "f4475a2d"
+  },
+  {
+    "email": "testing13@test.co",
+    "password": "89b3ff3b1c7846d5e6e6477d43bc65b6cda89c155269c18bcfb9c0f43449342ccd3f7f776e4a83e681bb43af17b40f4f22f3329cda29613c7660de40d4811194.b9fa0b873647859e",
+    "id": "19db1413"
+  },
+  {
+    "email": "testing14@test.com",
+    "password": "7ddd139c87f124e8c0dad8fdb1c5de13f03c7b2541ab58f901f34673d6ae2705bd0c7fcbe1703313fdf2db5cd72a788b1df83ea7b1ee878a19d3aced528a8ea7.5a686bd5ccaa2c7d",
+    "id": "87e68eb2"
+  },
+  {
+    "email": "new@test.com",
+    "password": "f67bd2d85cb80a75f7e91dda252c508d87602d6788ac6cf5bcb9c254bf6631c4e4fa125dda71f738b09bb658b75807f5f5913ccc47af2640629912bd8505dca8.dcd67eb749f825b7",
+    "id": "1de9b5ca"
+  },
+  {
+    "email": "testing3434@test.com",
+    "password": "9518c518eaa2e06cf33670c22d14272587ab183c95d262bd36b37397c5bf9b14833811edfe4d4914e24f02a97f332e35aaf85b8b2d3a72bb264b9b04f2dd50a5.d54e6d4b134cbb34",
+    "id": "6bde83b8"
   }
 ]
